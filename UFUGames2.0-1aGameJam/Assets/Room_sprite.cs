@@ -17,9 +17,6 @@ public class Room_sprite : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetMouseButtonDown(0)) {
-			MoveLeft ();
-		}
 	}
 
 	public void MoveLeft() {
@@ -54,7 +51,7 @@ public class Room_sprite : MonoBehaviour {
 				stage_script.room_matrix[x,y-1] = true;
 				stage_script.room_matrix[x,y] = false;
 				y -= 1;
-				nextlocation.y -= 6.6f;
+				nextlocation.y += 5f;
 				StartCoroutine (MoveCoroutine(nextlocation,1f));
 			}
 		}
@@ -67,7 +64,7 @@ public class Room_sprite : MonoBehaviour {
 				stage_script.room_matrix[x,y+1] = true;
 				stage_script.room_matrix[x,y] = false;
 				y += 1;
-				nextlocation.y += 6.6f;
+				nextlocation.y -= 5f;
 				StartCoroutine (MoveCoroutine(nextlocation,1f));
 			}
 		}

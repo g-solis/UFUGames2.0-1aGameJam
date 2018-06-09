@@ -14,7 +14,7 @@ public class stage_script : MonoBehaviour {
 			}
 		}
 		room_matrix [0,0] = true;
-		room_matrix [1,0] = true;
+		room_matrix [0,1] = true;
 		room_matrix [1,1] = true;
 	}
 	

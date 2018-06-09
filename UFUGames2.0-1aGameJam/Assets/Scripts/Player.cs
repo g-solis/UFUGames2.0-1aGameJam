@@ -17,8 +17,8 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float moveX = Input.GetAxisRaw ("Horizontal");
-		float moveY = Input.GetAxisRaw ("Vertical");;
-
+		float moveY = Input.GetAxisRaw ("Vertical");
+		transform.rotation = new Quaternion (0, 0, 0, 0);
 		this.rgdb.velocity = new Vector2 (velocidade * moveX, this.rgdb.velocity.y);
 
 		
@@ -29,12 +29,14 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.gameObject.CompareTag("Stage")){
+			this.gameObject.GetComponent<Transform>().parent = other.gameObject.GetComponent<Transform>();
+		}
+	}
+
 	void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag ("Alavanca"))
-		{
-			//if(Input.GetKeyDown("e"))	
-		}
 
 		if (other.gameObject.CompareTag ("Escada"))
 		{
@@ -50,4 +52,6 @@ public class Player : MonoBehaviour {
 			this.rgdb.gravityScale = 2;
 		}
 	}
+
+
 }

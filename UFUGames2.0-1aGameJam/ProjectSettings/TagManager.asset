@@ -8,6 +8,8 @@ TagManager:
   - Alavanca
   - Escada
   - enemy
+  - AlavancaVert
+  - AlavancaHori
   layers:
   - Default
   - TransparentFX
